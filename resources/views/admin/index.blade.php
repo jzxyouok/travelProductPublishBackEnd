@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: lzy
- * Date: 23/11/2016
- * Time: 18:08
- */
+@extends('admin.layouts.master')
+
+@section('content')
+    <h4>欢迎来到后台首页</h4>
+    @endsection
