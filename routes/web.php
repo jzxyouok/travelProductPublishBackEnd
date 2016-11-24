@@ -11,24 +11,26 @@
 |
 */
 
-use App\Models\User;
-use App\Models\Role;
-use App\Models\Permission;
-
-
+/*前端路由*/
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
 Route::get('/home', 'HomeController@index');
+
+/*后端路由*/
+Route::get('admin', function () {
+    return redirect(route('admin.login'));
+});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('login', 'AuthController@getLogin')->name('admin.login');
     Route::post('login', 'AuthController@postLogin')->name('admin.login');
-
     Route::get('index', 'IndexController@index')->name('admin.index');
+
+    //用户管理
+    Route::resource('users', 'UserController');
 });
 
 //生成用户、角色、权限
