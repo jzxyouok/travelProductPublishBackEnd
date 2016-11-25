@@ -27,25 +27,11 @@
         </form>
         <!-- /.search form -->
 
+        @inject('permissionPresenter', 'App\Presenters\PermissionPresenter')
+
+
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>管理</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ route('users.index') }}" class="active">用户管理</a></li>
-                    <li><a href="#">角色管理</a></li>
-                    <li><a href="#">权限管理</a></li>
-                </ul>
-            </li>
-        </ul>
+        {!! $permissionPresenter->menu()  !!}
         <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

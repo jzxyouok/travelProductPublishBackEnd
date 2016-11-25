@@ -12,4 +12,10 @@ class IndexController extends Controller
     {
         return view('admin.index');
     }
+
+    //管理权限，角色，用户界面
+    public function userManager()
+    {
+        return view('admin.userManager');
+    }
 }

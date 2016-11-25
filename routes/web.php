@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('login', 'AuthController@postLogin')->name('admin.login');
     Route::get('index', 'IndexController@index')->name('admin.index');
 
+    //系统管理 二级菜单
+    Route::get('user/manager', 'IndexController@userManager')->name('admin.user.manager');
     //用户管理
     Route::resource('users', 'UserController');
 });
