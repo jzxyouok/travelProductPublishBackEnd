@@ -26,8 +26,7 @@ class UserController extends BaseController
     {
         //
         $users = $this->userRepository->all();
-        dd($users);
-        return view('admin.user.index');
+        return view('admin.user.index', compact('users'));
     }
 
     /**
