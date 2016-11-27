@@ -53,10 +53,9 @@ class PermissionPresenter {
 
                 $menu = $menu."</ul></li>";
 
-
             } else {
                 //无二级菜单
-                $menu = sprintf('<li><a href="%s"><i class="fa fa-link"></i>%s<span></span></a></li>', route('users.index'), $display_name);
+                $menu = sprintf('<li><a href="%s"><i class="fa fa-link"></i><span>%s</span></a></li>', route('users.index'), $display_name);
             }
 
             $html = $html.$menu;

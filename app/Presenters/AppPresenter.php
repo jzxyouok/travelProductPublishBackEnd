@@ -9,11 +9,17 @@ class AppPresenter {
     public function appMenuCurrentActive($routeName)
     {
         $currentRouteName = Route::currentRouteName();
-        $names = explode('.', $currentRouteName);
 
-        if (isset($names) && $names[1] == $routeName) {
+        if ($currentRouteName == $routeName) {
             return 'active';
+        } else {
+            return '';
         }
+
+//        $names = explode('.', $currentRouteName);
+//        if (isset($names) && $names[0] == $routeName) {
+//            return 'active';
+//        }
 
     }
     

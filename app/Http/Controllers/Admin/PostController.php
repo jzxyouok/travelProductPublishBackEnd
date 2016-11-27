@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Repositories\UserRepository;
-use App\Repositories\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends BaseController
+class PostController extends Controller
 {
-    private $userRepository;
-
-    public function __construct(UserRepository $userRepository)
-    {
-        parent::__construct();
-        $this->userRepository = $userRepository;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +15,6 @@ class UserController extends BaseController
     public function index()
     {
         //
-        $users = $this->userRepository->all();
-        dd($users);
-        return view('admin.user.index');
     }
 
     /**

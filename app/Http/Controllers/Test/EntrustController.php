@@ -96,7 +96,7 @@ class EntrustController extends Controller
         $permissionUser->is_menu = false;
         $permissionUser->name = 'admin.user';
         $permissionUser->display_name = '用户管理';
-        $permissionUser->description = '可以访问用户路由 对用户 curd';
+        $permissionUser->description = '页面';
         $permissionUser->save();
 
         //创建管理角色权限

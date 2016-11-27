@@ -28,6 +28,14 @@ class AuthController extends Controller
         }
 
         return redirect()->back();
+    }
 
+    public function logout()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+        }
+
+        return redirect()->route('admin.login');
     }
 }
